@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Application</title>
+  <link rel="stylesheet" href="Quiz2.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <!-- Login Form -->
+    <div id="login-form">
+      <h2>Login to Start the Quiz</h2>
+      <label for="login-username">Username:</label>
+      <input type="text" id="login-username" placeholder="Enter Username" />
+      <label for="login-password">Password:</label>
+      <input type="password" id="login-password" placeholder="Enter Password" />
+      <button onclick="login()">Login</button>
+      <div id="login-error" style="color: red; display: none;">Invalid credentials. Please try again.</div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quiz" style="display: none;">
+      <div id="question-container">
+        <p id="question">Loading Question...</p>
+      </div>
+      <div id="answers">
+        <button class="answer-button" onclick="checkAnswer('A')">A</button>
+        <button class="answer-button" onclick="checkAnswer('B')">B</button>
+        <button class="answer-button" onclick="checkAnswer('C')">C</button>
+        <button class="answer-button" onclick="checkAnswer('D')">D</button>
+      </div>
+      <div id="feedback"></div>
+      <div id="score-container">
+        <p>Score: <span id="score">0</span></p>
+      </div>
+    </div>
+
+    <!-- Result Section -->
+    <div id="result" style="display: none;">
+      <h2>Quiz Completed!</h2>
+      <p>Well done, <span id="user-name"></span>! Your final score is: <span id="final-score"></span></p>
+      <button onclick="restartQuiz()">Try Again</button>
+    </div>
+  </div>
+
+  <script src="Quiz2.js"></script>
+</body>
+</html>
